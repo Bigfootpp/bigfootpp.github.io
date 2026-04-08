@@ -10,14 +10,14 @@
 }
 
 :root {
-  --bg: #0a0a0a;
-  --bg-card: #0d0d0d;
-  --bg-card-hover: #111111;
+  --bg: #111111;
+  --bg-card: #161616;
+  --bg-card-hover: #1a1a1a;
   --border: rgba(0, 255, 65, 0.15);
   --border-strong: rgba(0, 255, 65, 0.35);
-  --text: #c0c0c0;
-  --text-bright: #e0e0e0;
-  --text-dim: #5a5a5a;
+  --text: #d0d0d0;
+  --text-bright: #e8e8e8;
+  --text-dim: #7a7a7a;
   --accent: #00ff41;
   --accent-dim: #00cc33;
   --accent-glow: rgba(0, 255, 65, 0.4);
@@ -49,8 +49,8 @@ body::before {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.1) 2px,
-    rgba(0, 0, 0, 0.1) 4px
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 4px
   );
   pointer-events: none;
   z-index: 9999;
@@ -61,7 +61,7 @@ body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.15) 100%);
   pointer-events: none;
   z-index: 9998;
 }
@@ -106,7 +106,7 @@ body::after {
   right: 0;
   z-index: 100;
   padding: 1rem 2rem;
-  background: rgba(10, 10, 10, 0.95);
+  background: rgba(17, 17, 17, 0.95);
   border-bottom: 1px solid var(--border);
 }
 
