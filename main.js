@@ -1,17 +1,11 @@
 // ====================
 // TYPING EFFECT - Hero
 // ====================
-const typingEl = document.getElementById('typing-text');
-const heroSubEl = document.getElementById('hero-sub');
-
-const heroText = typingEl.dataset.text || '';
-const heroSubText = heroSubEl.dataset.text || '';
-
-const typingSpeed = 50;
-const subTypingSpeed = 30;
-
+let typingEl, heroSubEl, heroText, heroSubText;
 let charIndex = 0;
 let subCharIndex = 0;
+const typingSpeed = 50;
+const subTypingSpeed = 30;
 
 function typeHero() {
   if (charIndex < heroText.length) {
@@ -36,6 +30,10 @@ function typeSub() {
 }
 
 window.addEventListener('load', () => {
+  typingEl = document.getElementById('typing-text');
+  heroSubEl = document.getElementById('hero-sub');
+  heroText = typingEl.dataset.text || '';
+  heroSubText = heroSubEl.dataset.text || '';
   setTimeout(typeHero, 500);
 });
 
