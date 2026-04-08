@@ -241,6 +241,17 @@ body::after {
   color: var(--accent);
 }
 
+.typing-cursor {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 .gradient-text {
   color: var(--accent);
   text-shadow: 0 0 30px var(--accent-glow);

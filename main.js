@@ -1,4 +1,46 @@
-// Reveal on scroll
+// ====================
+// TYPING EFFECT - Hero
+// ====================
+const typingEl = document.getElementById('typing-text');
+const heroSubEl = document.getElementById('hero-sub');
+
+const heroText = typingEl.dataset.text || '';
+const heroSubText = heroSubEl.dataset.text || '';
+
+const typingSpeed = 50;
+const subTypingSpeed = 30;
+
+let charIndex = 0;
+let subCharIndex = 0;
+
+function typeHero() {
+  if (charIndex < heroText.length) {
+    typingEl.textContent += heroText.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeHero, typingSpeed);
+  } else {
+    setTimeout(typeSub, 400);
+  }
+}
+
+function typeSub() {
+  if (subCharIndex < heroSubText.length) {
+    if (heroSubText.charAt(subCharIndex) === '\n') {
+      heroSubEl.innerHTML += '<br>';
+    } else {
+      heroSubEl.textContent += heroSubText.charAt(subCharIndex);
+    }
+    subCharIndex++;
+    setTimeout(typeSub, subTypingSpeed);
+  }
+}
+
+window.addEventListener('load', () => {
+  setTimeout(typeHero, 500);
+});
+
+// ====================
+// REVEAL ON SCROLL
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) e.target.classList.add('visible');
